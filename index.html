@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Gateway Pro — Unified AI API Access | GPT-4o, Claude, Gemini in One Key</title>
+<meta name="description" content="One API key for GPT-4o, Claude 3.5, Gemini Pro, and more. 50% cheaper than direct. Built for developers who ship fast.">
+<meta property="og:title" content="AI Gateway Pro — One API Key for All AI Models">
+<meta property="og:description" content="Access GPT-4o, Claude, Gemini through one unified API. 50% cheaper. One key. Ship faster.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔑</text></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#050510;--surface:rgba(255,255,255,0.04);--glass:rgba(255,255,255,0.06);--border:rgba(255,255,255,0.1);--text:#e2e8f0;--dim:#64748b;--green:#10b981;--blue:#3b82f6;--purple:#8b5cf6;--cyan:#06b6d4;--orange:#f59e0b;--gradient:linear-gradient(135deg,#8b5cf6,#06b6d4);--radius:16px}
+html{scroll-behavior:smooth}
+body{font-family:'SF Mono',SFMono-Regular,ui-monospace,'Cascadia Code',Menlo,monospace;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;overflow-x:hidden}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+.glow{position:fixed;width:800px;height:800px;border-radius:50%;filter:blur(150px);opacity:.15;pointer-events:none}
+.glow-1{background:var(--purple);top:-400px;left:-200px}
+.glow-2{background:var(--cyan);bottom:-400px;right:-200px}
+.container{max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--border)}
+.nav-logo{font-size:1.1rem;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--cyan)}
+.nav-links{display:flex;gap:24px}
+.nav-links a{color:var(--dim);text-decoration:none;font-size:.85rem;transition:color .3s}
+.nav-links a:hover{color:var(--text)}
+.hero{text-align:center;padding:80px 0 60px}
+.badge{display:inline-block;padding:6px 14px;border-radius:20px;border:1px solid rgba(16,185,129,.3);background:rgba(16,185,129,.1);color:var(--green);font-size:.75rem;font-weight:600;margin-bottom:20px;letter-spacing:.5px}
+h1{font-size:2.8rem;font-weight:800;line-height:1.1;margin-bottom:16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-1.5px}
+h1 .highlight{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.1rem;color:var(--dim);max-width:560px;margin:0 auto 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:14px 28px;border-radius:10px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--gradient);color:white}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(139,92,246,.3)}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--purple);background:rgba(139,92,246,.05)}
+.code-preview{background:rgba(0,0,0,.5);border:1px solid var(--border);border-radius:12px;padding:24px;margin:48px auto 0;max-width:620px;text-align:left;font-size:.85rem;line-height:1.8;position:relative}
+.code-preview .comment{color:var(--dim)}
+.code-preview .keyword{color:var(--purple)}
+.code-preview .string{color:var(--green)}
+.code-preview .method{color:var(--cyan)}
+.code-preview .tag{position:absolute;top:12px;right:12px;font-size:.65rem;padding:3px 8px;border-radius:6px;background:rgba(139,92,246,.15);color:var(--purple)}
+.models{padding:60px 0}
+.models h2{text-align:center;font-size:1.8rem;font-weight:700;margin-bottom:8px;font-family:-apple-system,sans-serif;letter-spacing:-1px}
+.models .sub{text-align:center;color:var(--dim);margin-bottom:32px;font-family:-apple-system,sans-serif}
+.model-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.model-card{background:var(--glass);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;transition:all .3s}
+.model-card:hover{border-color:var(--purple);transform:translateY(-2px)}
+.model-card .name{font-size:.95rem;font-weight:700;margin-bottom:4px}
+.model-card .provider{font-size:.75rem;color:var(--dim)}
+.model-card .savings{font-size:.8rem;color:var(--green);font-weight:600;margin-top:8px}
+.pricing{padding:60px 0}
+.pricing h2{text-align:center;font-size:1.8rem;font-weight:700;margin-bottom:8px;font-family:-apple-system,sans-serif;letter-spacing:-1px}
+.pricing .sub{text-align:center;color:var(--dim);margin-bottom:32px;font-family:-apple-system,sans-serif}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.price-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative;transition:all .3s}
+.price-card:hover{border-color:var(--purple)}
+.price-card.featured{border-color:var(--purple);background:rgba(139,92,246,.05)}
+.price-card.featured::before{content:'MOST POPULAR';position:absolute;top:-10px;left:50%;transform:translateX(-50%);padding:4px 12px;border-radius:8px;background:var(--gradient);color:white;font-size:.65rem;font-weight:700;letter-spacing:.5px}
+.price-card .tier{font-size:1rem;font-weight:700;margin-bottom:4px}
+.price-card .price{font-size:2.2rem;font-weight:800;font-family:-apple-system,sans-serif;margin:12px 0 4px}
+.price-card .price span{font-size:.9rem;color:var(--dim);font-weight:400}
+.price-card .credits{font-size:.85rem;color:var(--cyan);margin-bottom:16px}
+.price-card ul{list-style:none;margin-bottom:20px}
+.price-card li{font-size:.8rem;color:var(--dim);padding:4px 0;padding-left:18px;position:relative}
+.price-card li::before{content:'+';position:absolute;left:0;color:var(--green);font-weight:700}
+.price-card .btn{width:100%;justify-content:center;font-size:.85rem;padding:12px}
+.how{padding:60px 0}
+.how h2{text-align:center;font-size:1.8rem;font-weight:700;margin-bottom:32px;font-family:-apple-system,sans-serif;letter-spacing:-1px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.step{background:var(--glass);border:1px solid var(--border);border-radius:12px;padding:24px}
+.step .num{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;border-radius:8px;background:rgba(139,92,246,.15);color:var(--purple);font-size:.8rem;font-weight:700;margin-bottom:12px}
+.step h3{font-size:.95rem;font-weight:700;margin-bottom:6px;font-family:-apple-system,sans-serif}
+.step p{font-size:.8rem;color:var(--dim)}
+.donate{padding:48px 0;text-align:center}
+.donate-card{background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(6,182,212,.08));border:1px solid rgba(139,92,246,.2);border-radius:var(--radius);padding:32px}
+.donate-card h2{font-size:1.3rem;font-weight:700;margin-bottom:6px;font-family:-apple-system,sans-serif}
+.donate-card>p{color:var(--dim);font-size:.9rem;margin-bottom:20px;font-family:-apple-system,sans-serif}
+.donate-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.donate-btn{padding:10px 20px;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none;border:1px solid var(--border);display:inline-flex;align-items:center;gap:6px}
+.donate-btn.pp{background:rgba(59,130,246,.1);color:var(--blue);border-color:rgba(59,130,246,.3)}
+.donate-btn.pp:hover{background:rgba(59,130,246,.2)}
+.donate-btn.cr{background:rgba(139,92,246,.1);color:var(--purple);border-color:rgba(139,92,246,.3)}
+.donate-btn.cr:hover{background:rgba(139,92,246,.2)}
+.wallets{display:none;margin-top:16px;text-align:left;max-width:500px;margin-left:auto;margin-right:auto}
+.wallets.show{display:block}
+.w-row{display:flex;align-items:center;background:rgba(0,0,0,.3);border-radius:8px;padding:8px 12px;margin-bottom:6px;font-size:.75rem}
+.w-row .w-chain{font-weight:700;color:var(--purple);min-width:70px}
+.w-row .w-addr{color:var(--dim);flex:1;word-break:break-all;margin:0 8px;font-size:.7rem}
+.w-row button{padding:3px 10px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--dim);cursor:pointer;font-size:.7rem}
+.w-row button:hover{color:var(--text);border-color:var(--purple)}
+.waitlist{max-width:440px;margin:24px auto 0;display:flex;gap:8px}
+.waitlist input{flex:1;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:rgba(0,0,0,.3);color:var(--text);font-size:.85rem;font-family:inherit}
+.waitlist input:focus{outline:none;border-color:var(--purple)}
+.waitlist button{padding:10px 20px;border-radius:8px;border:none;background:var(--gradient);color:white;font-weight:700;cursor:pointer;font-size:.85rem}
+footer{text-align:center;padding:40px 0;color:var(--dim);font-size:.75rem;border-top:1px solid var(--border)}
+footer a{color:var(--purple);text-decoration:none}
+@media(max-width:600px){h1{font-size:2rem}.hero{padding:50px 0 40px}.code-preview{font-size:.75rem;padding:16px}.price-grid{grid-template-columns:1fr}.waitlist{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<div class="container">
+<nav class="nav">
+  <div class="nav-logo">AI<span>Gateway</span>.pro</div>
+  <div class="nav-links">
+    <a href="#models">Models</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#how">How It Works</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="badge">NOW IN BETA -- EARLY ACCESS PRICING</div>
+  <h1>One API Key.<br><span class="highlight">Every AI Model.</span></h1>
+  <p class="hero-sub">Access GPT-4o, Claude 3.5 Sonnet, Gemini Pro, Llama 3, and 20+ models through a single unified API. Up to 50% cheaper than going direct.</p>
+  <div class="hero-cta">
+    <a href="#pricing" class="btn btn-primary">Get API Key -- $9/mo</a>
+    <a href="#how" class="btn btn-ghost">See How It Works</a>
+  </div>
+  <div class="code-preview">
+    <span class="tag">Python</span>
+    <span class="comment"># Same interface. Any model. One key.</span><br>
+    <span class="keyword">import</span> openai<br><br>
+    client = openai.OpenAI(<br>
+    &nbsp;&nbsp;base_url=<span class="string">"https://api.aigateway.pro/v1"</span>,<br>
+    &nbsp;&nbsp;api_key=<span class="string">"your-gateway-key"</span><br>
+    )<br><br>
+    response = client.<span class="method">chat.completions.create</span>(<br>
+    &nbsp;&nbsp;model=<span class="string">"claude-3.5-sonnet"</span>,&nbsp;<span class="comment"># or gpt-4o, gemini-pro, llama-3...</span><br>
+    &nbsp;&nbsp;messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello!"</span>}]<br>
+    )
+  </div>
+</section>
+
+<section class="models" id="models">
+  <h2>20+ Models, One Endpoint</h2>
+  <p class="sub">Drop-in replacement for OpenAI SDK. Switch models by changing one string.</p>
+  <div class="model-grid">
+    <div class="model-card"><div class="name">GPT-4o</div><div class="provider">OpenAI</div><div class="savings">Save 30%</div></div>
+    <div class="model-card"><div class="name">Claude 3.5 Sonnet</div><div class="provider">Anthropic</div><div class="savings">Save 40%</div></div>
+    <div class="model-card"><div class="name">Gemini Pro</div><div class="provider">Google</div><div class="savings">Save 50%</div></div>
+    <div class="model-card"><div class="name">Llama 3 70B</div><div class="provider">Meta</div><div class="savings">Save 60%</div></div>
+    <div class="model-card"><div class="name">Mixtral 8x7B</div><div class="provider">Mistral</div><div class="savings">Save 55%</div></div>
+    <div class="model-card"><div class="name">DeepSeek V2</div><div class="provider">DeepSeek</div><div class="savings">Save 70%</div></div>
+    <div class="model-card"><div class="name">Command R+</div><div class="provider">Cohere</div><div class="savings">Save 35%</div></div>
+    <div class="model-card"><div class="name">+ 15 More</div><div class="provider">Growing Weekly</div><div class="savings">All Models</div></div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Simple, Transparent Pricing</h2>
+  <p class="sub">Pay less than going direct. No hidden fees. Cancel anytime.</p>
+  <div class="price-grid">
+    <div class="price-card">
+      <div class="tier">Starter</div>
+      <div class="price">$9<span>/mo</span></div>
+      <div class="credits">$20 in API credits included</div>
+      <ul>
+        <li>All models included</li>
+        <li>100 RPM rate limit</li>
+        <li>Standard support</li>
+        <li>Usage dashboard</li>
+      </ul>
+      <a href="https://paypal.me/icandoanythingagent/9" class="btn btn-ghost" target="_blank">Start Building</a>
+    </div>
+    <div class="price-card featured">
+      <div class="tier">Pro</div>
+      <div class="price">$29<span>/mo</span></div>
+      <div class="credits">$75 in API credits included</div>
+      <ul>
+        <li>All models included</li>
+        <li>1,000 RPM rate limit</li>
+        <li>Priority support</li>
+        <li>Advanced analytics</li>
+        <li>Prompt caching (save 50%+)</li>
+      </ul>
+      <a href="https://paypal.me/icandoanythingagent/29" class="btn btn-primary" target="_blank">Get Pro Access</a>
+    </div>
+    <div class="price-card">
+      <div class="tier">Scale</div>
+      <div class="price">$99<span>/mo</span></div>
+      <div class="credits">$300 in API credits included</div>
+      <ul>
+        <li>All models + early access</li>
+        <li>10,000 RPM rate limit</li>
+        <li>Dedicated support</li>
+        <li>Custom fine-tuning</li>
+        <li>SLA guarantee</li>
+        <li>Team seats (up to 5)</li>
+      </ul>
+      <a href="https://paypal.me/icandoanythingagent/99" class="btn btn-ghost" target="_blank">Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <h2>Ship in 3 Minutes</h2>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>Get Your Key</h3><p>Sign up and get your API key instantly. No credit card for beta users.</p></div>
+    <div class="step"><div class="num">2</div><h3>Change One Line</h3><p>Replace your OpenAI base_url with ours. Same SDK, same interface, more models.</p></div>
+    <div class="step"><div class="num">3</div><h3>Ship Faster</h3><p>Switch between GPT-4o, Claude, Gemini by changing the model string. A/B test models in production.</p></div>
+  </div>
+</section>
+
+<section class="donate">
+  <div class="donate-card">
+    <h2>Support the Project</h2>
+    <p>AI Gateway is bootstrapped and indie-built. Your support keeps the servers running and models flowing.</p>
+    <div class="donate-btns">
+      <a href="https://paypal.me/icandoanythingagent" target="_blank" class="donate-btn pp">PayPal</a>
+      <button class="donate-btn cr" onclick="document.getElementById('wallets').classList.toggle('show')">Crypto</button>
+    </div>
+    <div class="wallets" id="wallets">
+      <div class="w-row"><span class="w-chain">ETH/Base</span><span class="w-addr">0xAC0320ac14498BA80295ab005f0ba0DC04760e23</span><button onclick="navigator.clipboard.writeText('0xAC0320ac14498BA80295ab005f0ba0DC04760e23');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',2000)">Copy</button></div>
+      <div class="w-row"><span class="w-chain">Solana</span><span class="w-addr">47uUqKznBDR4iph1VY6ffzycbfBWSwhkjWWYruf7VsmR</span><button onclick="navigator.clipboard.writeText('47uUqKznBDR4iph1VY6ffzycbfBWSwhkjWWYruf7VsmR');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',2000)">Copy</button></div>
+    </div>
+    <form class="waitlist" onsubmit="event.preventDefault();const e=this.querySelector('input');const l=JSON.parse(localStorage.getItem('gw_waitlist')||'[]');l.push({email:e.value,t:Date.now()});localStorage.setItem('gw_waitlist',JSON.stringify(l));e.value='';document.getElementById('wlMsg').textContent='You are on the list!'">
+      <input type="email" placeholder="you@company.com" required>
+      <button type="submit">Join Waitlist</button>
+    </form>
+    <p id="wlMsg" style="font-size:.8rem;color:var(--green);margin-top:8px"></p>
+  </div>
+</section>
+
+<footer>
+  <p>AI Gateway Pro -- Unified AI API Access. <a href="https://paypal.me/icandoanythingagent" target="_blank">Support us</a></p>
+</footer>
+</div>
+</body>
+</html>
